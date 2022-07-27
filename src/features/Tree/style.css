@@ -1,0 +1,82 @@
+a {
+	text-decoration: none;
+	color:#3e3e3e;
+}
+a:visited {
+	color:#3e3e3e;
+}
+.treeline,
+.treeline ul,
+.treeline li {
+	position: relative;
+	margin: 0 0 0 20px;
+	padding: 0;
+	line-height: 1.2;
+	list-style: none;
+	font-family: Gilroy;
+	color:#3e3e3e;
+	user-select: none; 
+}
+.treeline li{
+	padding: 4px 0 0 0;
+}
+.treeline ul {
+	margin: 0 0 0 15px; 
+}
+.treeline > li:not(:only-child),
+.treeline li li {
+	position: relative;
+	padding: 3px 0 0 20px; 
+}
+
+.treeline li:not(:last-child) {
+	border-left: 1px solid #ccc;
+}
+
+.treeline li li:before,
+.treeline > li:not(:only-child):before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.1em;
+	height: 0.7em;
+	border-bottom: 1px solid #ccc;
+}
+.treeline li:last-child:before {
+	width: calc(1.1em - 1px);
+	border-left: 1px solid #ccc;
+}
+.treeline .drop {
+	position: absolute;
+	left: -6px;
+	top: 5px;
+	width: 11px;
+	height: 11px;
+	line-height: 1em;
+	text-align: center;
+	background: #F4C3C2;
+	color: #fff; 
+	font-size: 78%; 
+	cursor: pointer;
+}
+.treeline .dropTree{
+	position: absolute;
+	left: -16px;
+	top: 5px;
+	width: 11px;
+	height: 11px;
+	line-height: 1em;
+	text-align: center;
+	margin: 3px 0 0 0;
+	background: #F4C3C2;
+	color: #fff; 
+	font-size: 78%; 
+	cursor: pointer;
+}
+.treeline li:last-child > .drop {
+	margin-left: 1px;
+}
+.treeline .drop + ul {
+	display: block;
+}

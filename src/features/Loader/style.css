@@ -1,0 +1,12 @@
+.container{
+    height: calc(100vh - 91px);
+	width: 100%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container__image{
+	width: 130px;
+	height: 130px;
+}

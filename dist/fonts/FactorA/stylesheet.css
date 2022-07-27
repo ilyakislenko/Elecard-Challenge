@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Factor A';
+    src: url('FactorALight-Regular.eot');
+    src: local('Factor A Light Regular'), local('FactorALight-Regular'),
+        url('FactorALight-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FactorALight-Regular.woff2') format('woff2'),
+        url('FactorALight-Regular.woff') format('woff'),
+        url('FactorALight-Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Factor A';
+    src: url('FactorA-Regular.eot');
+    src: local('Factor A Regular'), local('FactorA-Regular'),
+        url('FactorA-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FactorA-Regular.woff2') format('woff2'),
+        url('FactorA-Regular.woff') format('woff'),
+        url('FactorA-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Factor A';
+    src: url('FactorAMedium-Regular.eot');
+    src: local('Factor A Medium Regular'), local('FactorAMedium-Regular'),
+        url('FactorAMedium-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FactorAMedium-Regular.woff2') format('woff2'),
+        url('FactorAMedium-Regular.woff') format('woff'),
+        url('FactorAMedium-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Factor A';
+    src: url('FactorA-Bold.eot');
+    src: local('Factor A Bold'), local('FactorA-Bold'),
+        url('FactorA-Bold.eot?#iefix') format('embedded-opentype'),
+        url('FactorA-Bold.woff2') format('woff2'),
+        url('FactorA-Bold.woff') format('woff'),
+        url('FactorA-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

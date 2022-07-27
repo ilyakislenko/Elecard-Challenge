@@ -1,0 +1,41 @@
+.header {
+	position: fixed;
+	display: flex;
+	top:0;
+	width:100%;
+	text-align: center;
+	background: rgb(162, 205, 205);
+	color: black;
+	font-size: 20px;
+	height:40px;
+	z-index:100;
+	user-select: none; 
+}
+.header__button{
+	margin: auto 0 auto 15px;
+	
+	color: #ffffff;
+    background: transparent;
+    border:none;
+    cursor: pointer;
+    font-family: Gilroy;
+	font-size: 20px;
+}
+.header__button:hover{
+	color: #ffffff;
+}
+.header__toggle{
+	color:#ffffff;
+	font-family: Gilroy;
+	display:flex;
+	align-items:center;
+}
+.header__toggle label,input{
+	cursor: pointer;
+}
+@media(max-width:515px){
+	.header {
+		justify-content: center;
+		height:30px;
+	}
+}
