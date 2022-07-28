@@ -1,33 +1,11 @@
+import { usePaginate } from "../../app/model/pagination";
 import "./style.css";
 export const PaginatedList = ({ cards, currentPage, paginate }) => {
-	console.log("render");
 	const usersPerPage = 6;
-	const count = Math.ceil(cards.length / usersPerPage);
+    const count = Math.ceil(cards.length / usersPerPage);
 	let pageNumbers = [];
 	const makeButtons = () => {
-		let counter = 1;
-		if (currentPage < 3) {
-			while (counter <= 3) {
-				pageNumbers.push(counter);
-				counter++;
-			}
-		} else if (currentPage > 2) {
-			while (counter < currentPage + 2) {
-				if (counter <= count) {
-					pageNumbers.push(counter);
-					counter++;
-				} else {
-					counter++;
-				}
-			}
-			pageNumbers = pageNumbers.slice(currentPage - 2);
-		}
-		if (!pageNumbers.includes(count)) {
-			pageNumbers.push("Last");
-		}
-		if (!pageNumbers.includes(1) && currentPage > 2) {
-			pageNumbers.unshift("First");
-		}
+		pageNumbers = [...usePaginate(cards,currentPage)]
 	};
 	makeButtons();
 	if (cards.length !== 0) {

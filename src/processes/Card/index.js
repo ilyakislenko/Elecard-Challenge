@@ -13,7 +13,7 @@ export const Card = ({ image, date, filesize, category, handleClick, id }) => {
 			<div className="container__card">
 				<div className="card">
 					<button
-						tabindex="-1"
+						tabIndex="-1"
 						className="card__button"
 						id={id}
 						onClick={closeCard}
