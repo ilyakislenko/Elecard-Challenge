@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	user-select: none; 
+	user-select: none;
 }
 .list__ul {
 	display: flex;
@@ -30,7 +30,7 @@
 	align-items: center;
 	border-radius: 10px;
 	margin: 4px;
-	cursor: pointer; 
+	cursor: pointer;
 }
 .list__ul__li__a {
 	text-decoration: none;
@@ -68,14 +68,17 @@
 	background-position: center;
 }
 @media (max-width: 515px) {
-	.list__ul__li,.list__ul__currentLi,.list__ul__leftLi,.list__ul__rightLi {
+	.list__ul__li,
+	.list__ul__currentLi,
+	.list__ul__leftLi,
+	.list__ul__rightLi {
 		width: 19px;
 		height: 19px;
 		border-radius: 2px;
 		font-size: 12px;
 		margin: 2px;
 	}
-	.list__ul__li__a{
+	.list__ul__li__a {
 		font-size: 10px;
 	}
 }
