@@ -8,6 +8,7 @@ export const Card = ({ image, date, filesize, category, handleClick, id }) => {
 		setShowCard(!showCard);
 		handleClick(e);
 	};
+	useEffect(() => setShowCard(true), []);
 	return (
 		<CSSTransition in={showCard} timeout={300} classNames="alert" unmountOnExit>
 			<div className="container__card">

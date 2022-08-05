@@ -1,5 +1,5 @@
-export const useSort = (e, data) => {
-	switch (e.target.value) {
+export const useSort = (event, data) => {
+	switch (event) {
 		case "category":
 			if (data !== null) {
 				return [...data].sort(function (a, b) {

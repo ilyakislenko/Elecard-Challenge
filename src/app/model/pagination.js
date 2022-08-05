@@ -1,6 +1,6 @@
 
 export const usePaginate = (cards,currentPage) => {
-    const usersPerPage = 6;
+    const usersPerPage = 12;
     const count = Math.ceil(cards.length / usersPerPage);
     let pageNumbers = [];
     let counter = 1;

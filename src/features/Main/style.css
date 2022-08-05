@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: space-around;
     overflow: hidden;
-    margin: 0 12.5% 0 12.5%;
-    width: 100%;
+    margin: 0 auto 0 auto;
+    width: 80%;
+    max-width: 1240px;
 }

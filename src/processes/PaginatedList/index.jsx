@@ -1,7 +1,7 @@
 import { usePaginate } from "../../app/model/pagination";
 import "./style.css";
 export const PaginatedList = ({ cards, currentPage, paginate }) => {
-	const usersPerPage = 6;
+	const usersPerPage = 12;
     const count = Math.ceil(cards.length / usersPerPage);
 	let pageNumbers = [];
 	const makeButtons = () => {

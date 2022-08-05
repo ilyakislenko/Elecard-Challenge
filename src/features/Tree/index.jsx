@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./style.css";
-export const Tree = ({ data }) => {
+export const Tree = ({ data,handleClick }) => {
 	const categories = new Set();
 	data.forEach(({ category }) => {
 		categories.add(category);
@@ -42,18 +42,11 @@ export const Tree = ({ data }) => {
 												{data.map((item) => {
 													if (item.category == category) {
 														return (
-															<li key={item.timestamp}>
-																<a
-																	href={
-																		"http://contest.elecard.ru/frontend_data/" +
-																		item.image
-																	}
-																	target="_blank"
-																>
-																	{item.image.substr(
-																		item.image.indexOf("/") + 1
-																	)}
-																</a>
+															<li key={item.timestamp} >
+																<img className="thumbnail"
+																	src={"http://contest.elecard.ru/frontend_data/" + item.image}
+																	onClick={(e) => handleClick(e,item.image)}
+																/>
 															</li>
 														);
 													}

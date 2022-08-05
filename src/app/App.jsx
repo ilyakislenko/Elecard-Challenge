@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import { getData } from "../api";
 import { Footer } from "../features/Footer";
 import { Header } from "../features/Header";
 import { Loader } from "../features/Loader";
 import { Main } from "../features/Main";
 import { Tree } from "../features/Tree";
+import { PopUp } from "../processes/PopUp";
 import { SortList } from "../processes/SortList";
 import { useRemove } from "./model/remove";
 import { useReset } from "./model/reset";
 import { useSort } from "./model/sort";
 import "./style.css";
 function App() {
+	const [selectedImg, setSelectedImg] = useState('');
+	const [isOpen, setIsOpen] = useState(false);
+	const [lastSort,setLastSort] = useState('');
 	const [data, setData] = useState(null);
 	const [mode, SetMode] = useState(false);
 	useEffect(() => {
@@ -34,10 +39,13 @@ function App() {
 	const toggleMode = (e) => {
 		if (e.target.id) {
 			e.target.id === "tree" ? SetMode(false) : SetMode(true);
+			setIsOpen(false);
 		}
+
 	};
 	const sortData = (e) => {
-		const newData = useSort(e, data);
+		setLastSort(e.target.value);
+		const newData = useSort(e.target.value, data);
 		setData(newData);
 	};
 	const removeCard = (e) => {
@@ -48,7 +56,18 @@ function App() {
 	};
 	const resetCards = (e) => {
 		const newData = useReset(e, data);
-		setData(newData);
+		const sortedData = useSort(lastSort,newData);
+		setData(sortedData);
+	};
+	const togglePopUp = (e, arg) => {
+		if (e.target.id === "close") {
+			setIsOpen(!isOpen);
+		} else if (selectedImg !== '' && isOpen) {
+			setSelectedImg(arg);
+		} else{
+			setSelectedImg(arg);
+			setIsOpen(!isOpen);
+		}
 	};
 	if (data) {
 		if (!mode) {
@@ -56,14 +75,17 @@ function App() {
 				<div>
 					<Header handleClick={resetCards} handleChange={toggleMode} />
 					<div className="container__main">
-						<Tree data={data} />
+						<Tree data={data} handleClick={togglePopUp} />
 					</div>
 					<Footer />
+					<CSSTransition in={isOpen} timeout={300} classNames="alert" unmountOnExit>
+					<PopUp image={selectedImg} handleClick={togglePopUp} />
+					</CSSTransition>
 				</div>
 			);
 		} else {
 			return (
-				<div>
+				<div >
 					<Header handleClick={resetCards} handleChange={toggleMode} />
 					<div className="container__main">
 						<SortList handleChange={sortData} />

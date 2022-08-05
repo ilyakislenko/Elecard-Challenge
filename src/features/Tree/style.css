@@ -80,3 +80,8 @@ a:visited {
 .treeline .drop + ul {
 	display: block;
 }
+.thumbnail{
+	width:50px;
+	height:40px;
+	cursor: pointer;
+}

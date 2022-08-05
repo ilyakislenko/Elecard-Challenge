@@ -5,7 +5,7 @@ import { useState } from "react";
 import { PaginatedList } from "../../processes/PaginatedList";
 export const Main = ({ data, handleClick }) => {
 	const [currentPage, setCurrentPage] = useState(1);
-	const usersPerPage = 6;
+	const usersPerPage = 12;
 	const count = Math.ceil(data.length / usersPerPage);
 	const paginate = (number) => {
 		if(number === 'First'){
@@ -20,7 +20,7 @@ export const Main = ({ data, handleClick }) => {
 	return (
 		<div className="main">
 			{data.map((item, index) => {
-				if (index + 1 <= 6 * currentPage && index + 1 > (currentPage - 1) * 6) {
+				if (index + 1 <= 12 * currentPage && index + 1 > (currentPage - 1) * 12) {
 					return (
 						<Card
 							key={item.timestamp}
